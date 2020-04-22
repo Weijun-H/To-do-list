@@ -171,10 +171,57 @@ ul.todo li .buttons button svg {
     margin: -11px 0 0 -11px;
 }
 
+ul.todo li .buttons button.complete svg {
+    border-radius: 11px;
+    border: 1.5px solid #25b99a;
+    transition: background 0.2 ease;
+}
+
+ul.todo#completed li .buttons button.complete svg {
+    background: #25b99a;
+    border: 0px;
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg {
+    background: rgba(37, 185, 154, 0.75);
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg .fill {
+    fill: #fff;
+}
+
+ul.todo#completed li .buttons button.complete svg .fill {
+    fill: #fff;
+}
+
+ul.todo li .buttons button svg .fill {
+    transition: fill 0.2s ease;
+}
+
 ul.todo li .buttons button.remove svg .fill {
     fill: #c0cecb;
 }
 
 ul.todo li .buttons button.remove:hover svg .fill {
     fill: #e85656;
+}
+
+ul.todo li .buttons button.complete svg .fill {
+    fill: #25b99a;
+}
+
+ul.todo#completed:not(:empty) {
+    position: relative;
+    padding: 60px 0 0 0;
+}
+
+ul.todo#completed:not(:empty):before {
+    width: 150px;
+    content: '';
+    height: 1px;
+    background: #d8e5e0;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin: 0 0 0 -75px;
 }
